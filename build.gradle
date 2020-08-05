@@ -14,4 +14,10 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
+task installSharedLib(type: Exec) {
+    commandLine "./install_native_libraries.sh"
+}
+
+build.dependsOn installSharedLib
+
 mainClassName = 'com.github.git24j.GradleMain'
